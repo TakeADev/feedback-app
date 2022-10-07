@@ -31,23 +31,6 @@ function FeedbackList({ feedback, handleDelete }) {
   )
 }
 
-//   return (
-//     <div className='feedback-list'>
-//       <ul>
-//         {feedback.map((item) => {
-//           return (
-//             <FeedbackItem
-//               key={item.id}
-//               item={item}
-//               handleDelete={handleDelete}
-//             />
-//           )
-//         })}
-//       </ul>
-//     </div>
-//   )
-// }
-
 FeedbackList.propTypes = {
   feedback: PropTypes.arrayOf(
     PropTypes.shape({

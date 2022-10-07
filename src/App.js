@@ -10,12 +10,14 @@ import FeedbackForm from './components/FeedbackForm'
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData)
 
+  //Displays alert window to confirm and then deletes a feedback item from the data.
   const deleteFeedback = (id) => {
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback(feedback.filter((item) => item.id !== id))
     }
   }
 
+  //Creates new feedback item with a unique id. Replaces data with new array containing data and new item
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4()
     setFeedback([newFeedback, ...feedback])

@@ -10,6 +10,7 @@ function FeedbackForm({ handleAdd }) {
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [message, setMessage] = useState('')
 
+  //Verifies input isn't empty and is at least 10 char. before allowing and submitting.
   const handleTextChange = ({ target: { value } }) => {
     if (value === '') {
       setBtnDisabled(true)
@@ -25,6 +26,7 @@ function FeedbackForm({ handleAdd }) {
     setText(value)
   }
 
+  //Confirms text is at least 10 char. before adding to data. Displays alert if not
   const handleSubmit = (e) => {
     e.preventDefault()
     if (text.trim().length > 10) {
@@ -33,7 +35,8 @@ function FeedbackForm({ handleAdd }) {
         rating,
       }
       handleAdd(newFeedback)
-    }
+    } else
+      alert('The text submitted was not at least 10 characters. Try again.')
     setText('')
   }
 

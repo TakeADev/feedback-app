@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+//Gets average rating for feedback items.
 function FeedbackStats({ feedback }) {
   let ratingAverage =
     Math.round(
