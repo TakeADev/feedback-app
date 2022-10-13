@@ -6,7 +6,7 @@ import RatingSelect from './RatingSelect'
 
 function FeedbackForm({ handleAdd }) {
   const [text, setText] = useState('')
-  const [rating, setRating] = useState('')
+  const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [message, setMessage] = useState('')
 
@@ -29,6 +29,7 @@ function FeedbackForm({ handleAdd }) {
   //Confirms text is at least 10 char. before adding to data. Displays alert if not
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(rating)
     if (text.trim().length > 10) {
       const newFeedback = {
         text,
